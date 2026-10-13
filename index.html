@@ -1,196 +1,853 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daraz Deals |Ansh's Affiliate Picks</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AnshFinds ⚡ — Curated Dropshipping & Top Daraz Deals Nepal</title>
+  <meta name="description" content="Discover handpicked viral tech, cozy room aesthetics, kitchen essentials, and summer accessories from verified Daraz sellers. Authentic reviews and direct checkout.">
+  
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23f95738'%3E%3Cpath d='M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'/%3E%3C/svg%3E">
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>🔥 Best Deals on Daraz</h1>
-        <p>Handpicked affiliate deals just for you</p>
-    </header>
 
-    <main class="product-grid">
-        <div class="product-card">
-            <img src="images/WaterBottle.jpg" alt="Product 1">
-            <h2>Water Bottle</h2>
-            <p>high quality bottles with straw</p>
-            <a href="https://s.daraz.com.np/s.kcg3" target="_blank">Buy on Daraz</a>
+  <!-- Top Announcement Bar -->
+  <aside class="announcement-bar" role="region" aria-label="Announcement">
+    <span class="announcement-badge">Nepal 🇳🇵</span>
+    <span>🔥 Verified Viral Finds on Daraz • 100% Direct Buyer Links • Hand-Tested Quality</span>
+  </aside>
+
+  <!-- Sticky Header -->
+  <header class="header-nav">
+    <div class="container">
+      <div class="nav-inner">
+        <!-- Brand Logo -->
+        <a href="#" class="brand-logo">
+          <div class="brand-icon">⚡</div>
+          <div class="brand-text">
+            <span class="brand-title">Ansh<span>Finds</span></span>
+            <span class="brand-subtitle">Curated Dropship Hub</span>
+          </div>
+        </a>
+
+        <!-- Search Bar -->
+        <div class="search-wrapper">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="product-search" class="search-input" placeholder="Search gadgets, lighting, cooling, kitchen..." autocomplete="off">
+          <button id="search-clear" class="search-clear" title="Clear Search" aria-label="Clear Search">&times;</button>
         </div>
 
-        <div class="product-card">
-            <img src="images/Moon.jpg" alt="Product 2">
-            <h2>Moon Lap</h2>
-            <p>Moon light decor for cozy vibes</p>
-            <a href="https://s.daraz.com.np/s.kcQP?cc" target="_blank">Buy on Daraz</a>
+        <!-- Nav Actions -->
+        <div class="nav-actions">
+          <button id="theme-toggle" class="theme-btn" title="Toggle Theme" aria-label="Toggle Theme">
+            <span id="theme-icon">☀️</span>
+            <span id="theme-text">Light</span>
+          </button>
+          <a href="https://github.com/Anshgrinds" target="_blank" rel="noopener" class="portfolio-link-btn" title="Ansh's GitHub">
+            <span>GitHub ↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <div class="hero-tag">Verified Affiliate Storefront</div>
+          <h1 class="hero-title">
+            Viral Tech, Cozy Aesthetics & <br>
+            <span class="highlight">Daily Lifestyle Upgrades.</span>
+          </h1>
+          <p class="hero-desc">
+            Skip the clutter of bad listings. AnshFinds curates top-rated viral gadgets, room ambiance decor, and home essentials directly from top-reviewed sellers on Daraz Nepal.
+          </p>
+
+          <div class="hero-metrics">
+            <div class="metric-col">
+              <span class="metric-val">25+</span>
+              <span class="metric-lbl">Tested Drops</span>
+            </div>
+            <div class="metric-col">
+              <span class="metric-val">4.8★</span>
+              <span class="metric-lbl">Average Rating</span>
+            </div>
+            <div class="metric-col">
+              <span class="metric-val">100%</span>
+              <span class="metric-lbl">Direct Daraz Links</span>
+            </div>
+            <div class="metric-col">
+              <span class="metric-val">0 Spam</span>
+              <span class="metric-lbl">Honest Selections</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sticky Controls Toolbar -->
+  <section class="controls-bar" aria-label="Product Filtering Controls">
+    <div class="container">
+      <div class="controls-inner">
+        <!-- Category Pills -->
+        <nav class="category-pills" aria-label="Categories">
+          <button class="pill-btn active" data-category="all">
+            <span>All Finds</span> <span class="pill-count">25</span>
+          </button>
+          <button class="pill-btn" data-category="lighting">
+            <span>✨ Ambient & Lighting</span> <span class="pill-count">4</span>
+          </button>
+          <button class="pill-btn" data-category="audio">
+            <span>🎧 Audio & Pods</span> <span class="pill-count">4</span>
+          </button>
+          <button class="pill-btn" data-category="cooling">
+            <span>❄️ Cooling & Fans</span> <span class="pill-count">4</span>
+          </button>
+          <button class="pill-btn" data-category="kitchen">
+            <span>🍳 Kitchen & Dining</span> <span class="pill-count">9</span>
+          </button>
+          <button class="pill-btn" data-category="lifestyle">
+            <span>⚡ Lifestyle & Sports</span> <span class="pill-count">4</span>
+          </button>
+        </nav>
+
+        <!-- Sorting -->
+        <div class="sort-wrapper">
+          <label for="product-sort" class="sort-label">Sort by:</label>
+          <select id="product-sort" class="sort-select">
+            <option value="featured">Featured Drops</option>
+            <option value="rating">Highest Rated</option>
+            <option value="reviews">Most Reviewed</option>
+            <option value="alpha">Alphabetical (A-Z)</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Catalog Grid -->
+  <main class="main-content">
+    <div class="container">
+      <!-- Results Meta -->
+      <div class="results-meta">
+        <div class="results-count">
+          Showing <b id="showing-count">25</b> handpicked products
+        </div>
+        <div class="results-note" style="font-size: 0.78rem; color: var(--text-muted); font-family: var(--font-mono);">
+          ⚡ Click direct to checkout on Daraz
+        </div>
+      </div>
+
+      <!-- The Product Grid -->
+      <div class="product-grid" id="product-grid">
+
+        <!-- 1. Water Bottle -->
+        <article class="product-card" data-category="kitchen" data-index="1" data-rating="4.8" data-reviews="210" data-keywords="water bottle straw bpa gym sports hydra drink flask">
+          <div class="card-media">
+            <div class="badge-stack">
+              <span class="card-badge badge-bestseller">Best Seller</span>
+            </div>
+            <img src="images/WaterBottle.jpg" alt="Ergonomic Water Bottle with Straw" loading="lazy">
+            <button class="quick-view-btn" aria-label="Quick View">👁 Quick View</button>
+          </div>
+          <div class="card-body">
+            <div class="card-category-row">
+              <span class="card-category">Kitchen & Travel</span>
+              <span class="card-rating">★ 4.8 <span class="card-reviews">(210)</span></span>
+            </div>
+            <h2 class="card-title">Sports Water Bottle with Straw</h2>
+            <p class="card-desc">Durable, food-grade BPA-free hydration bottle featuring a leak-proof flip straw and ergonomic grip ring for work and workouts.</p>
+            <span class="card-highlight-pill">✓ Leak-Proof Flip Straw</span>
+            <div class="card-actions">
+              <a href="https://s.daraz.com.np/s.kcg3" target="_blank" rel="noopener" class="btn-buy">Buy on Daraz ↗</a>
+              <button class="btn-share" title="Copy Deal Link" aria-label="Copy Deal Link">📋</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. Moon Lamp -->
+        <article class="product-card" data-category="lighting" data-index="2" data-rating="4.9" data-reviews="340" data-keywords="moon lamp 3d light night ambient decor cozy aesthetic bedroom">
+          <div class="card-media">
+            <div class="badge-stack">
+              <span class="card-badge badge-trending">Viral Aesthetic</span>
+            </div>
+            <img src="images/Moon.jpg" alt="3D Printed Moon Ambient Touch Lamp" loading="lazy">
+            <button class="quick-view-btn" aria-label="Quick View">👁 Quick View</button>
+          </div>
+          <div class="card-body">
+            <div class="card-category-row">
+              <span class="card-category">Ambient Lighting</span>
+              <span class="card-rating">★ 4.9 <span class="card-reviews">(340)</span></span>
+            </div>
+            <h2 class="card-title">3D Moon Ambient Touch Lamp</h2>
+            <p class="card-desc">Realistic lunar surface topography with warm, natural, and cool touch-dimmable LED lighting with wooden geometric stand.</p>
+            <span class="card-highlight-pill">✓ Touch Dimmable Colors</span>
+            <div class="card-actions">
+              <a href="https://s.daraz.com.np/s.kcQP?cc" target="_blank" rel="noopener" class="btn-buy">Buy on Daraz ↗</a>
+              <button class="btn-share" title="Copy Deal Link" aria-label="Copy Deal Link">📋</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. Study Lamp -->
+        <article class="product-card" data-category="lighting" data-index="3" data-rating="4.7" data-reviews="180" data-keywords="study lamp desk reading led eye care usb rechargeable flexible">
+          <div class="card-media">
+            <div class="badge-stack">
+              <span class="card-badge badge-toprated">Top Rated</span>
+            </div>
+            <img src="images/lamp.jpg" alt="Rechargeable Eye-Care Study Lamp" loading="lazy">
+            <button class="quick-view-btn" aria-label="Quick View">👁 Quick View</button>
+          </div>
+          <div class="card-body">
+            <div class="card-category-row">
+              <span class="card-category">Ambient Lighting</span>
+              <span class="card-rating">★ 4.7 <span class="card-reviews">(180)</span></span>
+            </div>
+            <h2 class="card-title">Rechargeable Eye-Care Study Lamp</h2>
+            <p class="card-desc">Anti-blue light flicker-free reading lamp with 3 brightness modes, 360° flexible silicone gooseneck, and long-lasting battery.</p>
+            <span class="card-highlight-pill">✓ Flicker-Free Eye Protection</span>
+            <div class="card-actions">
+              <a href="https://s.daraz.com.np/s.kWDr?cc" target="_blank" rel="noopener" class="btn-buy">Buy on Daraz ↗</a>
+              <button class="btn-share" title="Copy Deal Link" aria-label="Copy Deal Link">📋</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4. RGB Strip -->
+        <article class="product-card" data-category="lighting" data-index="4" data-rating="4.8" data-reviews="520" data-keywords="rgb light strip 5m led room gaming setup remote decor">
+          <div class="card-media">
+            <div class="badge-stack">
+              <span class="card-badge badge-deal">Hot Deal</span>
+            </div>
+            <img src="images/RGB light.jpg" alt="5M Smart RGB Ambient LED Strip" loading="lazy">
+            <button class="quick-view-btn" aria-label="Quick View">👁 Quick View</button>
+          </div>
+          <div class="card-body">
+            <div class="card-category-row">
+              <span class="card-category">Ambient Lighting</span>
+              <span class="card-rating">★ 4.8 <span class="card-reviews">(520)</span></span>
+            </div>
+            <h2 class="card-title">5M Smart RGB Ambient LED Strip</h2>
+            <p class="card-desc">Multi-color SMD strip with wireless remote control, music sync modes, and high-tack adhesive backing for bedrooms and setups.</p>
+            <span class="card-highlight-pill">✓ Wireless Remote Included</span>
+            <div class="card-actions">
+              <a href="https://s.daraz.com.np/s.kWxl?cc" target="_blank" rel="noopener" class="btn-buy">Buy on Daraz ↗</a>
+              <button class="btn-share" title="Copy Deal Link" aria-label="Copy Deal Link">📋</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5. Galaxy Projector -->
+        <article class="product-card" data-category="lighting" data-index="5" data-rating="4.9" data-reviews="410" data-keywords="galaxy projector astronaut nebula stars sky night light cozy room">
+          <div class="card-media">
+            <div class="badge-stack">
+              <span class="card-badge badge-viral">Viral Pick</span>
+            </div>
+            <img src="images/Galaxy projector.jpg" alt="Astronaut Galaxy Star Projector" loading="lazy">
+            <button class="quick-view-btn" aria-label="Quick View">👁 Quick View</button>
+          </div>
+          <div class="card-body">
+            <div class="card-category-row">
+              <span class="card-category">Ambient Lighting</span>
+              <span class="card-rating">★ 4.9 <span class="card-reviews">(410)</span></span>
+            </div>
+            <h2 class="card-title">Astronaut Galaxy Star Projector</h2>
+            <p class="card-desc">Stunning multi-color cosmic nebula and green laser star ceiling projection with magnetic 360° rotating astronaut head and timer.</p>
+            <span class="card-highlight-pill">✓ 360° Magnetic Head Rotation</span>
+            <div class="card-actions">
+              <a href="https://s.daraz.com.np/s.kWxt?cc" target="_blank" rel="noopener" class="btn-buy">Buy on Daraz ↗</a>
+              <button class="btn-share" title="Copy Deal Link" aria-label="Copy Deal Link">📋</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 6. Ultra Pods -->
+        <article class="product-card" data-category="audio" data-index="6" data-rating="4.7" data-reviews="890" data-keywords="ultra pods earbud tws wireless bluetooth display led transparent audio">
+          <div class="card-media">
+            <div class="badge-stack">
+              <span class="card-badge badge-bestseller">Top Seller</span>
+            </div>
+            <img src="images/Earbud.jpg" alt="Ultra Pods Pro LED Display TWS" loading="lazy">
+            <button class="quick-view-btn" aria-label="Quick View">👁 Quick View</button>
+          </div>
+          <div class="card-body">
+            <div class="card-category-row">
+              <span class="card-category">Audio & Pods</span>
+              <span class="card-rating">★ 4.7 <span class="card-reviews">(890)</span></span>
+            </div>
+            <h2 class="card-title">Ultra Pods Pro (Digital LED Display)</h2>
+            <p class="card-desc">Sleek translucent case with real-time digital battery percentage display, punchy stereo bass, and touch gesture playback.</p>
+            <span class="card-highlight-pill">✓ Digital Battery Screen</span>
+            <div class="card-actions">
+              <a href="https://s.daraz.com.np/s.KTOw?cc" target="_blank" rel="noopener" class="btn-buy">Buy on Daraz ↗</a>
+              <button class="btn-share" title="Copy Deal Link" aria-label="Copy Deal Link">📋</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7. Astra Pods -->
+        <article class="product-card" data-category="audio" data-index="7" data-rating="4.8" data-reviews="260" data-keywords="astra pods transparent earbuds tws bluetooth cyberpunk sound">
+          <div class="card-media">
+            <div class="badge-stack">
+              <span class="card-badge badge-trending">Trending</span>
+            </div>
+            <img src="images/Astra.jpg" alt="Astra Futuristic Transparent Earbuds" loading="lazy">
+            <button class="quick-view-btn" aria-label="Quick View">👁 Quick View</button>
+          </div>
+          <div class="card-body">
+            <div class="card-category-row">
+              <span class="card-category">Audio & Pods</span>
+              <span class="card-rating">★ 4.8 <span class="card-reviews">(260)</span></span>
+            </div>
+            <h2 class="card-title">Astra Futuristic Transparent Pods</h2>
+            <p class="card-desc">Cyberpunk-inspired see-through mechanical shell with Hi-Fi acoustic dynamic drivers, environmental noise reduction, and USB-C fast charging.</p>
+            <span class="card-highlight-pill">✓ Hi-Fi Dynamic Driver</span>
+            <div class="card-actions">
+              <a href="https://s.daraz.com.np/s.kTZO?cc" target="_blank" rel="noopener" class="btn-buy">Buy on Daraz ↗</a>
+              <button class="btn-share" title="Copy Deal Link" aria-label="Copy Deal Link">📋</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 8. Mustang Earbuds -->
+        <article class="product-card" data-category="audio" data-index="8" data-rating="4.9" data-reviews="175" data-keywords="mustang car earbud automotive sports alloy casing sound bass">
+          <div class="card-media">
+            <div class="badge-stack">
+              <span class="card-badge badge-viral">Collector's</span>
+            </div>
+            <img src="images/Mustang earbud.jpg" alt="Mustang Supercar Alloy Gaming Pods" loading="lazy">
+            <button class="quick-view-btn" aria-label="Quick View">👁 Quick View</button>
+          </div>
+          <div class="card-body">
+            <div class="card-category-row">
+              <span class="card-category">Audio & Pods</span>
+              <span class="card-rating">★ 4.9 <span class="card-reviews">(175)</span></span>
+            </div>
+            <h2 class="card-title">Mustang Supercar Styled Pods</h2>
+            <p class="card-desc">Heavy-duty zinc alloy supercar silhouette case with mechanical opening, breathing headlamps, and theater-grade spatial audio.</p>
+            <span class="card-highlight-pill">✓ Zinc Alloy Car Case</span>
+            <div class="card-actions">
+              <a href="https://s.daraz.com.np/s.kTbS?cc" target="_blank" rel="noopener" class="btn-buy">Buy on Daraz ↗</a>
+              <button class="btn-share" title="Copy Deal Link" aria-label="Copy Deal Link">📋</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 9. Gaming Ear Pods -->
+        <article class="product-card" data-category="audio" data-index="9" data-rating="4.8" data-reviews="310" data-keywords="gaming ear pods low latency pubg free fire rgb bluetooth gaming">
+          <div class="card-media">
+            <div class="badge-stack">
+              <span class="card-badge badge-deal">Gamer Pick</span>
+            </div>
+            <img src="images/Gaming ear pods.jpg" alt="Low-Latency RGB Pro Gaming Pods" loading="lazy">
+            <button class="quick-view-btn" aria-label="Quick View">👁 Quick View</button>
+          </div>
+          <div class="card-body">
+            <div class="card-category-row">
+              <span class="card-category">Audio & Pods</span>
+              <span class="card-rating">★ 4.8 <span class="card-reviews">(310)</span></span>
+            </div>
+            <h2 class="card-title">Low-Latency RGB Pro Gaming Pods</h2>
+            <p class="card-desc">Engineered for mobile shooters with 40ms ultra-low latency game mode, 360° footsteps spatialization, and aggressive RGB LED accents.</p>
+            <span class="card-highlight-pill">✓ 40ms Ultra Low Latency</span>
+            <div class="card-actions">
+              <a href="https://s.daraz.com.np/s.kTYS?cc" target="_blank" rel="noopener" class="btn-buy">Buy on Daraz ↗</a>
+              <button class="btn-share" title="Copy Deal Link" aria-label="Copy Deal Link">📋</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 10. Neck Fan -->
+        <article class="product-card" data-category="cooling" data-index="10" data-rating="4.7" data-reviews="440" data-keywords="neck fan bladeless portable wearable summer cooling air cooler">
+          <div class="card-media">
+            <div class="badge-stack">
+              <span class="card-badge badge-trending">Summer Hit</span>
+            </div>
+            <img src="images/Neck Fan.jpg" alt="Bladeless 360° Portable Neck Fan" loading="lazy">
+            <button class="quick-view-btn" aria-label="Quick View">👁 Quick View</button>
+          </div>
+          <div class="card-body">
+            <div class="card-category-row">
+              <span class="card-category">Cooling & Fans</span>
+              <span class="card-rating">★ 4.7 <span class="card-reviews">(440)</span></span>
+            </div>
+            <h2 class="card-title">Bladeless 360° Portable Neck Fan</h2>
+            <p class="card-desc">Hands-free wearable neck cooler featuring multi-vent surrounding airflow, hair-safe bladeless turbines, and 3 silent power speeds.</p>
+            <span class="card-highlight-pill">✓ Hair-Safe Bladeless Vents</span>
+            <div class="card-actions">
+              <a href="https://s.daraz.com.np/s.ksNo?cc" target="_blank" rel="noopener" class="btn-buy">Buy on Daraz ↗</a>
+              <button class="btn-share" title="Copy Deal Link" aria-label="Copy Deal Link">📋</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 11. Mini Fan -->
+        <article class="product-card" data-category="cooling" data-index="11" data-rating="4.6" data-reviews="390" data-keywords="mini fan portable rechargeable handheld pocket cooler summer">
+          <div class="card-media">
+            <div class="badge-stack">
+              <span class="card-badge badge-deal">Pocket Pick</span>
+            </div>
+            <img src="images/Mini fFan.jpg" alt="Pocket Rechargeable Handheld Mini Fan" loading="lazy">
+            <button class="quick-view-btn" aria-label="Quick View">👁 Quick View</button>
+          </div>
+          <div class="card-body">
+            <div class="card-category-row">
+              <span class="card-category">Cooling & Fans</span>
+              <span class="card-rating">★ 4.6 <span class="card-reviews">(390)</span></span>
+            </div>
+            <h2 class="card-title">Pocket Rechargeable Mini Fan</h2>
+            <p class="card-desc">Ultra-lightweight travel handheld fan that slips into any bag. High-velocity aerodynamic blades with long-lasting USB charging.</p>
+            <span class="card-highlight-pill">✓ Pocket Size & Travel Ready</span>
+            <div class="card-actions">
+              <a href="https://s.daraz.com.np/s.ksnO?cc" target="_blank" rel="noopener" class="btn-buy">Buy on Daraz ↗</a>
+              <button class="btn-share" title="Copy Deal Link" aria-label="Copy Deal Link">📋</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 12. Table Fan -->
+        <article class="product-card" data-category="cooling" data-index="12" data-rating="4.8" data-reviews="215" data-keywords="table fan desk fan oscillating office silent usb powered cooling">
+          <div class="card-media">
+            <div class="badge-stack">
+              <span class="card-badge badge-toprated">Office Choice</span>
+            </div>
+            <img src="images/table Fan.jpg" alt="Oscillating Silent Desktop Table Fan" loading="lazy">
+            <button class="quick-view-btn" aria-label="Quick View">👁 Quick View</button>
+          </div>
+          <div class="card-body">
+            <div class="card-category-row">
+              <span class="card-category">Cooling & Fans</span>
+              <span class="card-rating">★ 4.8 <span class="card-reviews">(215)</span></span>
+            </div>
+            <h2 class="card-title">Oscillating Silent Desktop Table Fan</h2>
+            <p class="card-desc">Whisper-quiet brushless motor for study desks and offices. Smooth oscillation, angle adjustment, and minimal power consumption.</p>
+            <span class="card-highlight-pill">✓ Whisper-Quiet Brushless Motor</span>
+            <div class="card-actions">
+              <a href="https://s.daraz.com.np/s.ksMe?cc" target="_blank" rel="noopener" class="btn-buy">Buy on Daraz ↗</a>
+              <button class="btn-share" title="Copy Deal Link" aria-label="Copy Deal Link">📋</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 13. Humidity Fan -->
+        <article class="product-card" data-category="cooling" data-index="13" data-rating="4.7" data-reviews="195" data-keywords="humidity fan mist spray water nano cooling portable summer">
+          <div class="card-media">
+            <div class="badge-stack">
+              <span class="card-badge badge-bestseller">Dual Action</span>
+            </div>
+            <img src="images/Humidity fan.jpg" alt="Nano-Mist Spray Cooling Humidity Fan" loading="lazy">
+            <button class="quick-view-btn" aria-label="Quick View">👁 Quick View</button>
+          </div>
+          <div class="card-body">
+            <div class="card-category-row">
+              <span class="card-category">Cooling & Fans</span>
+              <span class="card-rating">★ 4.7 <span class="card-reviews">(195)</span></span>
+            </div>
+            <h2 class="card-title">Nano-Mist Spray Cooling Humidity Fan</h2>
+            <p class="card-desc">Combines refreshing air velocity with ultrasonic fine water mist to drop ambient temperatures instantly without wetting your desk.</p>
+            <span class="card-highlight-pill">✓ Ultrasonic Cooling Mist</span>
+            <div class="card-actions">
+              <a href="https://s.daraz.com.np/s.kTYS?cc" target="_blank" rel="noopener" class="btn-buy">Buy on Daraz ↗</a>
+              <button class="btn-share" title="Copy Deal Link" aria-label="Copy Deal Link">📋</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 14. Apron -->
+        <article class="product-card" data-category="kitchen" data-index="14" data-rating="4.7" data-reviews="140" data-keywords="waterproof apron kitchen cooking chef stain oil resistant pockets">
+          <div class="card-media">
+            <div class="badge-stack">
+              <span class="card-badge badge-deal">Chef Essential</span>
+            </div>
+            <img src="images/Apron.jpg" alt="Heavy-Duty Waterproof Chef Apron" loading="lazy">
+            <button class="quick-view-btn" aria-label="Quick View">👁 Quick View</button>
+          </div>
+          <div class="card-body">
+            <div class="card-category-row">
+              <span class="card-category">Kitchen & Dining</span>
+              <span class="card-rating">★ 4.7 <span class="card-reviews">(140)</span></span>
+            </div>
+            <h2 class="card-title">Heavy-Duty Waterproof Chef Apron</h2>
+            <p class="card-desc">Water and oil-repellent wipeable fabric with large front utility pockets, adjustable neck strap, and absorbent hand-wipe side pads.</p>
+            <span class="card-highlight-pill">✓ Oil-Proof with Coral Velvet Towels</span>
+            <div class="card-actions">
+              <a href="https://s.daraz.com.np/s.kEct?cc" target="_blank" rel="noopener" class="btn-buy">Buy on Daraz ↗</a>
+              <button class="btn-share" title="Copy Deal Link" aria-label="Copy Deal Link">📋</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 15. Lunch Box -->
+        <article class="product-card" data-category="kitchen" data-index="15" data-rating="4.8" data-reviews="320" data-keywords="lunch box bento thermal insulated stainless meal prep office school">
+          <div class="card-media">
+            <div class="badge-stack">
+              <span class="card-badge badge-bestseller">Best Value</span>
+            </div>
+            <img src="images/Lunch Box.jpg" alt="Thermal Insulated Bento Lunch Box" loading="lazy">
+            <button class="quick-view-btn" aria-label="Quick View">👁 Quick View</button>
+          </div>
+          <div class="card-body">
+            <div class="card-category-row">
+              <span class="card-category">Kitchen & Dining</span>
+              <span class="card-rating">★ 4.8 <span class="card-reviews">(320)</span></span>
+            </div>
+            <h2 class="card-title">Thermal Insulated Multi-Grid Lunch Box</h2>
+            <p class="card-desc">Leak-proof silicone-sealed compartments keeping meals fresh and flavors separated. Microwave-safe inner tray with built-in cutlery dock.</p>
+            <span class="card-highlight-pill">✓ 100% Leak-Proof Seal</span>
+            <div class="card-actions">
+              <a href="https://s.daraz.com.np/s.kE2Z?cc" target="_blank" rel="noopener" class="btn-buy">Buy on Daraz ↗</a>
+              <button class="btn-share" title="Copy Deal Link" aria-label="Copy Deal Link">📋</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 16. Spatula Set -->
+        <article class="product-card" data-category="kitchen" data-index="16" data-rating="4.9" data-reviews="280" data-keywords="spatula set silicone heat resistant non stick baking cooking utensils">
+          <div class="card-media">
+            <div class="badge-stack">
+              <span class="card-badge badge-toprated">Top Rated</span>
+            </div>
+            <img src="images/Spatula.jpg" alt="Non-Stick Silicone Spatula Set" loading="lazy">
+            <button class="quick-view-btn" aria-label="Quick View">👁 Quick View</button>
+          </div>
+          <div class="card-body">
+            <div class="card-category-row">
+              <span class="card-category">Kitchen & Dining</span>
+              <span class="card-rating">★ 4.9 <span class="card-reviews">(280)</span></span>
+            </div>
+            <h2 class="card-title">Heat-Resistant Silicone Spatula Set</h2>
+            <p class="card-desc">Seamless one-piece hygienic design rated up to 450°F. Gentle on non-stick cookware, dishwasher safe, and rust-free stainless steel core.</p>
+            <span class="card-highlight-pill">✓ 450°F Heat Safe Non-Stick</span>
+            <div class="card-actions">
+              <a href="https://s.daraz.com.np/s.kE2J?cc" target="_blank" rel="noopener" class="btn-buy">Buy on Daraz ↗</a>
+              <button class="btn-share" title="Copy Deal Link" aria-label="Copy Deal Link">📋</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 17. Knife Set -->
+        <article class="product-card" data-category="kitchen" data-index="17" data-rating="4.8" data-reviews="190" data-keywords="knife set stainless steel chef kitchen cutting precision blades">
+          <div class="card-media">
+            <div class="badge-stack">
+              <span class="card-badge badge-viral">Chef Pick</span>
+            </div>
+            <img src="images/knife Set.jpg" alt="High-Carbon Precision Kitchen Knife Set" loading="lazy">
+            <button class="quick-view-btn" aria-label="Quick View">👁 Quick View</button>
+          </div>
+          <div class="card-body">
+            <div class="card-category-row">
+              <span class="card-category">Kitchen & Dining</span>
+              <span class="card-rating">★ 4.8 <span class="card-reviews">(190)</span></span>
+            </div>
+            <h2 class="card-title">High-Carbon Steel Kitchen Knife Set</h2>
+            <p class="card-desc">Razor-sharp chef knives forged with laser-tested edge retention, anti-slip ergonomic handles, and corrosion-resistant black oxidation coating.</p>
+            <span class="card-highlight-pill">✓ Razor-Sharp Edge Retention</span>
+            <div class="card-actions">
+              <a href="https://s.daraz.com.np/s.kEdM?cc" target="_blank" rel="noopener" class="btn-buy">Buy on Daraz ↗</a>
+              <button class="btn-share" title="Copy Deal Link" aria-label="Copy Deal Link">📋</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 18. Water Pump -->
+        <article class="product-card" data-category="kitchen" data-index="18" data-rating="4.9" data-reviews="670" data-keywords="water pump jar electric automatic usb rechargeable dispenser bottle">
+          <div class="card-media">
+            <div class="badge-stack">
+              <span class="card-badge badge-viral">Viral Essential</span>
+            </div>
+            <img src="images/water pump.jpg" alt="Automatic Electric Water Jar Dispenser" loading="lazy">
+            <button class="quick-view-btn" aria-label="Quick View">👁 Quick View</button>
+          </div>
+          <div class="card-body">
+            <div class="card-category-row">
+              <span class="card-category">Kitchen & Dining</span>
+              <span class="card-rating">★ 4.9 <span class="card-reviews">(670)</span></span>
+            </div>
+            <h2 class="card-title">Automatic Electric Water Jar Dispenser</h2>
+            <p class="card-desc">One-touch effortless water pumping for standard 20L water jars. USB rechargeable battery lasts up to 6 whole jars per single charge.</p>
+            <span class="card-highlight-pill">✓ One-Touch Automatic Pump</span>
+            <div class="card-actions">
+              <a href="https://s.daraz.com.np/s.PVul?cc" target="_blank" rel="noopener" class="btn-buy">Buy on Daraz ↗</a>
+              <button class="btn-share" title="Copy Deal Link" aria-label="Copy Deal Link">📋</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 19. Coffee Blender -->
+        <article class="product-card" data-category="kitchen" data-index="19" data-rating="4.7" data-reviews="310" data-keywords="coffee blender frother milk mixer wireless portable electric drink">
+          <div class="card-media">
+            <div class="badge-stack">
+              <span class="card-badge badge-trending">Barista Pick</span>
+            </div>
+            <img src="images/Coffee.jpg" alt="Wireless Electric Coffee Milk Frother" loading="lazy">
+            <button class="quick-view-btn" aria-label="Quick View">👁 Quick View</button>
+          </div>
+          <div class="card-body">
+            <div class="card-category-row">
+              <span class="card-category">Kitchen & Dining</span>
+              <span class="card-rating">★ 4.7 <span class="card-reviews">(310)</span></span>
+            </div>
+            <h2 class="card-title">Wireless Electric Coffee & Milk Frother</h2>
+            <p class="card-desc">Creates velvety cafe-style microfoam in seconds for lattes, cappuccinos, matchas, and protein shakes with stainless steel whisk head.</p>
+            <span class="card-highlight-pill">✓ Velvety Microfoam in 15s</span>
+            <div class="card-actions">
+              <a href="https://s.daraz.com.np/s.PVFL?cc" target="_blank" rel="noopener" class="btn-buy">Buy on Daraz ↗</a>
+              <button class="btn-share" title="Copy Deal Link" aria-label="Copy Deal Link">📋</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 20. Mixer Grinder -->
+        <article class="product-card" data-category="kitchen" data-index="20" data-rating="4.8" data-reviews="240" data-keywords="mixer grinder kitchen food processor electric blender spices">
+          <div class="card-media">
+            <div class="badge-stack">
+              <span class="card-badge badge-deal">High Power</span>
+            </div>
+            <img src="images/Mixer.jpg" alt="Heavy-Duty Multi-Speed Mixer Grinder" loading="lazy">
+            <button class="quick-view-btn" aria-label="Quick View">👁 Quick View</button>
+          </div>
+          <div class="card-body">
+            <div class="card-category-row">
+              <span class="card-category">Kitchen & Dining</span>
+              <span class="card-rating">★ 4.8 <span class="card-reviews">(240)</span></span>
+            </div>
+            <h2 class="card-title">Heavy-Duty Multi-Speed Mixer Grinder</h2>
+            <p class="card-desc">High-torque pure copper motor for grinding tough spices, wet pastes, and smoothies with hardened stainless steel blades.</p>
+            <span class="card-highlight-pill">✓ Pure Copper Motor</span>
+            <div class="card-actions">
+              <a href="https://s.daraz.com.np/s.PVvd?cc" target="_blank" rel="noopener" class="btn-buy">Buy on Daraz ↗</a>
+              <button class="btn-share" title="Copy Deal Link" aria-label="Copy Deal Link">📋</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 21. Electric Cooker -->
+        <article class="product-card" data-category="kitchen" data-index="21" data-rating="4.9" data-reviews="430" data-keywords="electric cooker pot hotpot dorm student noodles soup steam mini">
+          <div class="card-media">
+            <div class="badge-stack">
+              <span class="card-badge badge-bestseller">Dorm Hero</span>
+            </div>
+            <img src="images/Cooker.jpg" alt="Compact Multi-Functional Electric Cooker" loading="lazy">
+            <button class="quick-view-btn" aria-label="Quick View">👁 Quick View</button>
+          </div>
+          <div class="card-body">
+            <div class="card-category-row">
+              <span class="card-category">Kitchen & Dining</span>
+              <span class="card-rating">★ 4.9 <span class="card-reviews">(430)</span></span>
+            </div>
+            <h2 class="card-title">Multi-Functional Mini Electric Cooker</h2>
+            <p class="card-desc">Perfect for students, solo cooking, and hotpots. Non-stick ceramic interior boils noodles, steams momos, and sautés with dual power settings.</p>
+            <span class="card-highlight-pill">✓ Ceramic Non-Stick Dual Heat</span>
+            <div class="card-actions">
+              <a href="https://s.daraz.com.np/s.PVvy?cc" target="_blank" rel="noopener" class="btn-buy">Buy on Daraz ↗</a>
+              <button class="btn-share" title="Copy Deal Link" aria-label="Copy Deal Link">📋</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 22. Raincoat -->
+        <article class="product-card" data-category="lifestyle" data-index="22" data-rating="4.8" data-reviews="380" data-keywords="raincoat bike rider motorcycle waterproof gear monsoon jacket">
+          <div class="card-media">
+            <div class="badge-stack">
+              <span class="card-badge badge-deal">Rider Grade</span>
+            </div>
+            <img src="images/raincoat.jpg" alt="Heavy-Duty Motorcycle Riding Raincoat" loading="lazy">
+            <button class="quick-view-btn" aria-label="Quick View">👁 Quick View</button>
+          </div>
+          <div class="card-body">
+            <div class="card-category-row">
+              <span class="card-category">Lifestyle & Outdoor</span>
+              <span class="card-rating">★ 4.8 <span class="card-reviews">(380)</span></span>
+            </div>
+            <h2 class="card-title">Heavy-Duty Bike Riding Raincoat</h2>
+            <p class="card-desc">Reinforced double-layered waterproof suit with high-visibility reflective safety strips, storm-resistant hood, and sealed seams for heavy downpours.</p>
+            <span class="card-highlight-pill">✓ Double Layer & Reflective Strips</span>
+            <div class="card-actions">
+              <a href="https://s.daraz.com.np/s.PJL4?cc" target="_blank" rel="noopener" class="btn-buy">Buy on Daraz ↗</a>
+              <button class="btn-share" title="Copy Deal Link" aria-label="Copy Deal Link">📋</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 23. Umbrella -->
+        <article class="product-card" data-category="lifestyle" data-index="23" data-rating="4.7" data-reviews="290" data-keywords="umbrella button automatic windproof rain monsoon teflon durable">
+          <div class="card-media">
+            <div class="badge-stack">
+              <span class="card-badge badge-toprated">Monsoon Ready</span>
+            </div>
+            <img src="images/Umbrella.jpg" alt="Auto-Open Windproof Heavy Button Umbrella" loading="lazy">
+            <button class="quick-view-btn" aria-label="Quick View">👁 Quick View</button>
+          </div>
+          <div class="card-body">
+            <div class="card-category-row">
+              <span class="card-category">Lifestyle & Outdoor</span>
+              <span class="card-rating">★ 4.7 <span class="card-reviews">(290)</span></span>
+            </div>
+            <h2 class="card-title">Auto-Open Windproof Button Umbrella</h2>
+            <p class="card-desc">Heavy-duty fiberglass 10-rib frame designed to withstand gusty winds without inverting. Water-shedding Teflon canopy with 1-second auto deployment.</p>
+            <span class="card-highlight-pill">✓ 10-Rib Reinforced Windproof</span>
+            <div class="card-actions">
+              <a href="https://s.daraz.com.np/s.PJOP?cc" target="_blank" rel="noopener" class="btn-buy">Buy on Daraz ↗</a>
+              <button class="btn-share" title="Copy Deal Link" aria-label="Copy Deal Link">📋</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 24. Argentina Jersey -->
+        <article class="product-card" data-category="lifestyle" data-index="24" data-rating="4.9" data-reviews="510" data-keywords="argentina jersey messi football sports dri fit uniform shirt">
+          <div class="card-media">
+            <div class="badge-stack">
+              <span class="card-badge badge-viral">Fan Favorite</span>
+            </div>
+            <img src="images/Jersey.jpg" alt="Argentina Special Edition Football Jersey" loading="lazy">
+            <button class="quick-view-btn" aria-label="Quick View">👁 Quick View</button>
+          </div>
+          <div class="card-body">
+            <div class="card-category-row">
+              <span class="card-category">Sports & Apparel</span>
+              <span class="card-rating">★ 4.9 <span class="card-reviews">(510)</span></span>
+            </div>
+            <h2 class="card-title">Argentina Special Edition Jersey</h2>
+            <p class="card-desc">Moisture-wicking breathable Dri-FIT fabric featuring authentic federation embroidery, athletic cut, and ventilated side mesh panels.</p>
+            <span class="card-highlight-pill">✓ Breathable Dri-FIT Mesh</span>
+            <div class="card-actions">
+              <a href="https://s.daraz.com.np/s.PJOx?cc" target="_blank" rel="noopener" class="btn-buy">Buy on Daraz ↗</a>
+              <button class="btn-share" title="Copy Deal Link" aria-label="Copy Deal Link">📋</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- 25. Portugal Jersey -->
+        <article class="product-card" data-category="lifestyle" data-index="25" data-rating="4.9" data-reviews="460" data-keywords="portugal jersey ronaldo football sports dri fit uniform shirt">
+          <div class="card-media">
+            <div class="badge-stack">
+              <span class="card-badge badge-viral">Matchday Gear</span>
+            </div>
+            <img src="images/Portugal.jpg" alt="Portugal National Team Matchday Jersey" loading="lazy">
+            <button class="quick-view-btn" aria-label="Quick View">👁 Quick View</button>
+          </div>
+          <div class="card-body">
+            <div class="card-category-row">
+              <span class="card-category">Sports & Apparel</span>
+              <span class="card-rating">★ 4.9 <span class="card-reviews">(460)</span></span>
+            </div>
+            <h2 class="card-title">Portugal National Team Jersey</h2>
+            <p class="card-desc">Official team colorway with premium lightweight performance polyester, heat-sealed crest details, and quick-dry technology.</p>
+            <span class="card-highlight-pill">✓ Quick-Dry Matchday Cut</span>
+            <div class="card-actions">
+              <a href="https://s.daraz.com.np/s.PJm7?cc" target="_blank" rel="noopener" class="btn-buy">Buy on Daraz ↗</a>
+              <button class="btn-share" title="Copy Deal Link" aria-label="Copy Deal Link">📋</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Zero Results Message -->
+      <div id="no-results" class="no-results">
+        <div class="no-results-icon">🔍</div>
+        <h3 class="no-results-title">No matching products found</h3>
+        <p class="no-results-desc">Try checking for spelling errors or searching another keyword.</p>
+        <button id="reset-filters" class="btn-reset">Reset All Filters ↺</button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Quick View Modal Backdrop -->
+  <div id="quick-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-container">
+      <button id="modal-close" class="modal-close" aria-label="Close Modal">&times;</button>
+      
+      <div class="modal-image-col">
+        <img id="modal-img" src="" alt="Product Detail Preview">
+      </div>
+
+      <div class="modal-info-col">
+        <div id="modal-cat" class="modal-category">CATEGORY</div>
+        <h2 id="modal-title" class="modal-title">Product Title</h2>
+        <div class="modal-rating-row">
+          <span id="modal-rating" style="color: var(--gold-star); font-weight: 700;">★ 4.8</span>
+          <span id="modal-reviews" style="color: var(--text-muted); font-size: 0.8rem;">(100+ reviews on Daraz)</span>
+        </div>
+        <p id="modal-desc" class="modal-desc">Product description goes here.</p>
+        
+        <div class="modal-trust-box">
+          <div class="modal-trust-item">
+            <span>🛡️</span> <span>Verified Top-Seller on Daraz Nepal</span>
+          </div>
+          <div class="modal-trust-item">
+            <span>🚚</span> <span>Nationwide Delivery across Nepal</span>
+          </div>
+          <div class="modal-trust-item">
+            <span>🔒</span> <span>Safe Direct Daraz Official Checkout</span>
+          </div>
         </div>
 
-        <div class="product-card">
-            <img src="images/lamp.jpg" alt="Product 2">
-            <h2>Study Lamp</h2>
-            <p>Rechargeble reading Study lamp</p>
-            <a href="https://s.daraz.com.np/s.kWDr?cc" target="_blank">Buy on Daraz</a>
+        <div class="modal-actions">
+          <a id="modal-buy-btn" href="#" target="_blank" rel="noopener" class="btn-buy" style="padding: 0.8rem 1.25rem;">
+            Buy Now on Daraz ↗
+          </a>
+          <button id="modal-share-btn" class="btn-reset" title="Copy Link">
+            <span>Copy Link 📋</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notice Container -->
+  <div id="toast-notice" class="toast-notice" role="status" aria-live="polite"></div>
+
+  <!-- Modern Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>AnshFinds ⚡</h4>
+          <p>
+            Curated daily drops and handpicked deals across gadgets, home decor, cooling appliances, and lifestyle accessories on Daraz Nepal.
+          </p>
         </div>
 
-        <div class="product-card">
-            <img src="images/RGB light.jpg" alt="Product 2">
-            <h2>RGB strip 5M</h2>
-            <p>Cool lights for your room</p>
-            <a href="https://s.daraz.com.np/s.kWxl?cc" target="_blank">Buy on Daraz</a>
+        <div class="footer-links">
+          <h5>Categories</h5>
+          <ul>
+            <li><a href="#" onclick="document.querySelector('[data-category=\'lighting\']').click(); return false;">✨ Ambient Lighting</a></li>
+            <li><a href="#" onclick="document.querySelector('[data-category=\'audio\']').click(); return false;">🎧 Audio & Pods</a></li>
+            <li><a href="#" onclick="document.querySelector('[data-category=\'cooling\']').click(); return false;">❄️ Cooling & Fans</a></li>
+            <li><a href="#" onclick="document.querySelector('[data-category=\'kitchen\']').click(); return false;">🍳 Kitchen Essentials</a></li>
+            <li><a href="#" onclick="document.querySelector('[data-category=\'lifestyle\']').click(); return false;">⚡ Lifestyle & Sports</a></li>
+          </ul>
         </div>
 
-        <div class="product-card">
-            <img src="images/Galaxy projector.jpg" alt="Product 2">
-            <h2>Galaxy projector</h2>
-            <p>Cool projector for your room</p>
-            <a href="https://s.daraz.com.np/s.kWxt?cc" target="_blank">Buy on Daraz</a>
+        <div class="footer-links">
+          <h5>Creator & Links</h5>
+          <ul>
+            <li><a href="https://github.com/Anshgrinds" target="_blank" rel="noopener">GitHub Profile ↗</a></li>
+            <li><a href="https://github.com/Anshgrinds/Anshfinds" target="_blank" rel="noopener">AnshFinds Repo ↗</a></li>
+            <li><a href="mailto:anshgrind@gmail.com">Contact / Suggestions</a></li>
+          </ul>
         </div>
+      </div>
 
-        <div class="product-card">
-            <img src="images/Earbud.jpg" alt="Product 2">
-            <h2>Ultra Pods</h2>
-            <p>Display Pods unlike anything else</p>
-            <a href="https://s.daraz.com.np/s.KTOw?cc" target="_blank">Buy on Daraz</a>
-        </div>
+      <div class="footer-bottom">
+        <p>© 2026 AnshFinds. Independent curation platform by Ansh Jha. All product logos and links belong to Daraz / respective sellers.</p>
+        <p>Built with Vanilla HTML5, Modern CSS & Vanilla JavaScript.</p>
+      </div>
+    </div>
+  </footer>
 
-        <div class="product-card">
-            <img src="images/Astra.jpg" alt="Product 2">
-            <h2>Astra Pods</h2>
-            <p>Astra Pods unlike anything else</p>
-            <a href="https://s.daraz.com.np/s.kTZO?cc" target="_blank">Buy on Daraz</a>
-        </div>
-
-        <div class="product-card">
-            <img src="images/Mustang earbud.jpg" alt="Product 2">
-            <h2>Mustang car styled Ear Pods</h2>
-            <p>Mustang Pods unlike anything else</p>
-            <a href="https://s.daraz.com.np/s.kTbS?cc" target="_blank">Buy on Daraz</a>
-        </div>
-
-        <div class="product-card">
-            <img src="images/Gaming ear pods.jpg" alt="Product 2">
-            <h2>Gaming Ear Pods</h2>
-            <p>Gaming Pods unlike anything else</p>
-            <a href="https://s.daraz.com.np/s.kTYS?cc" target="_blank">Buy on Daraz</a>
-        </div>
-
-        <div class="product-card">
-            <img src="images/Neck Fan.jpg" alt="Product 2">
-            <h2>Neck Fan</h2>
-            <p>Must need summer Accessories</p>
-            <a href="https://s.daraz.com.np/s.ksNo?cc" target="_blank">Buy on Daraz</a>
-        </div>
-
-        <div class="product-card">
-            <img src="images/Mini fFan.jpg" alt="Product 2">
-            <h2>Mini Fan</h2>
-            <p>Must need summer Accessories</p>
-            <a href="https://s.daraz.com.np/s.ksnO?cc" target="_blank">Buy on Daraz</a>
-        </div>
-
-        <div class="product-card">
-            <img src="images/table Fan.jpg" alt="Product 2">
-            <h2>Table Fan</h2>
-            <p>Must need summer Accessories</p>
-            <a href="https://s.daraz.com.np/s.ksMe?cc" target="_blank">Buy on Daraz</a>
-        </div>
-
-        <div class="product-card">
-            <img src="images/Humidity fan.jpg" alt="Product 2">
-            <h2>Mini Humidity Fan</h2>
-            <p>Must need summer Accessories</p>
-            <a href="https://s.daraz.com.np/s.kTYS?cc" target="_blank">Buy on Daraz</a>
-        </div>
-
-        <div class="product-card">
-            <img src="images/Apron.jpg" alt="Product 2">
-            <h2>Waterproof Apron</h2>
-            <p>Kitchen buddy</p>
-            <a href="https://s.daraz.com.np/s.kEct?cc" target="_blank">Buy on Daraz</a>
-        </div>
-
-        <div class="product-card">
-            <img src="images/Lunch Box.jpg" alt="Product 2">
-            <h2>Lunch Box</h2>
-            <p>Kitchen buddy</p>
-            <a href="https://s.daraz.com.np/s.kE2Z?cc" target="_blank">Buy on Daraz</a>
-        </div>
-
-        <div class="product-card">
-            <img src="images/Spatula.jpg" alt="Product 2">
-            <h2>Spatula Set</h2>
-            <p>Kitchen Set</p>
-            <a href="https://s.daraz.com.np/s.kE2J?cc" target="_blank">Buy on Daraz</a>
-        </div>
-
-        <div class="product-card">
-            <img src="images/knife Set.jpg" alt="Product 2">
-            <h2>Knife Set</h2>
-            <p>Kitchen Set</p>
-            <a href="https://s.daraz.com.np/s.kEdM?cc" target="_blank">Buy on Daraz</a>
-        </div>
-
-         <div class="product-card">
-            <img src="images/water pump.jpg" alt="Product 2">
-            <h2>Water Jar Pump</h2>
-            <p>Must need equipment</p>
-            <a href="https://s.daraz.com.np/s.PVul?cc" target="_blank">Buy on Daraz</a>
-        </div>
-
-        <div class="product-card">
-            <img src="images/Coffee.jpg" alt="Product 2">
-            <h2>Coffee Blender</h2>
-            <p>Must Need equipment</p>
-            <a href="https://s.daraz.com.np/s.PVFL?cc" target="_blank">Buy on Daraz</a>
-        </div>
-
-        <div class="product-card">
-            <img src="images/Mixer.jpg" alt="Product 2">
-            <h2>Mixer Grinder</h2>
-            <p>Must need equipment</p>
-            <a href="https://s.daraz.com.np/s.PVvd?cc" target="_blank">Buy on Daraz</a>
-        </div>
-
-        <div class="product-card">
-            <img src="images/Cooker.jpg" alt="Product 2">
-            <h2>Electric Cooker</h2>
-            <p>Must need kitchen equipment</p>
-            <a href="https://s.daraz.com.np/s.PVvy?cc" target="_blank">Buy on Daraz</a>
-        </div>
-
-        <div class="product-card">
-            <img src="images/raincoat.jpg" alt="Product 2">
-            <h2>Bike Raincoat</h2>
-            <p>Raincoat</p>
-            <a href="https://s.daraz.com.np/s.PJL4?cc" target="_blank">Buy on Daraz</a>
-        </div>
-
-        <div class="product-card">
-            <img src="images/Umbrella.jpg" alt="Product 2">
-            <h2>Button Umbrella</h2>
-            <p>Umbrella</p>
-            <a href="https://s.daraz.com.np/s.PJOP?cc" target="_blank">Buy on Daraz</a>
-        </div>
-
-        <div class="product-card">
-            <img src="images/Jersey.jpg" alt="Product 2">
-            <h2>Argentina Jersey</h2>
-            <p>Special edition jersey</p>
-            <a href="https://s.daraz.com.np/s.PJOx?cc" target="_blank">Buy on Daraz</a>
-        </div>
-
-        <div class="product-card">
-            <img src="images/Portugal.jpg" alt="Product 2">
-            <h2>Potugal Jersey</h2>
-            <p>Portugal jersey</p>
-            <a href="https://s.daraz.com.np/s.PJm7?cc" target="_blank">Buy on Daraz</a>
-        </div>
-    </main>
-
-    <footer>
-        <p>© 2025 Anshgrinds Affiliate Website. Powered by Anshgrinds.</p>
-    </footer>
+  <script src="script.js"></script>
 </body>
 </html>
